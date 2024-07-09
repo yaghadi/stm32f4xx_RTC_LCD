@@ -1,0 +1,33 @@
+/*
+ * LCD.c
+ *
+ *  Created on: Jul 8, 2024
+ *      Author: PurplE
+ */
+
+
+#include "LCD.h"
+
+void lcd_init(void){
+	GPIO_InitTypeDef LCD_signal;
+
+	/*Configure GPIO pins : LCD_GPIO_RS LCD_GPIO_RW LCD_GPIO_EN
+	 * 						LCD_GPIO_D4 LCD_GPIO_D5 LCD_GPIO_D6 LCD_GPIO_D7
+	 */
+	LCD_signal.Pin = LCD_GPIO_RS|LCD_GPIO_RW|LCD_GPIO_EN|LCD_GPIO_D4
+	                          |LCD_GPIO_D5|LCD_GPIO_D6|LCD_GPIO_D7;
+	LCD_signal.Mode = GPIO_MODE_OUTPUT_PP;
+	LCD_signal.Pull = GPIO_NOPULL;
+	LCD_signal.Speed = GPIO_SPEED_FREQ_LOW;
+	HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+
+	HAL_GPIO_WritePin(GPIOD, LCD_GPIO_RS, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOD, LCD_GPIO_RW, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOD, LCD_GPIO_EN, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOD, LCD_GPIO_D4, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOD, LCD_GPIO_D5, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOD, LCD_GPIO_D6, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOD, LCD_GPIO_D7, GPIO_PIN_RESET);
+
+}

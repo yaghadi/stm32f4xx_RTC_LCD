@@ -1,0 +1,13 @@
+../ECAUL/LCD.c:14:6:lcd_send_command	16	static
+../ECAUL/LCD.c:24:6:lcd_send_char	16	static
+../ECAUL/LCD.c:34:6:lcd_print_string	16	static
+../ECAUL/LCD.c:39:6:lcd_set_cursor	16	static
+../ECAUL/LCD.c:52:6:lcd_init	32	static
+../ECAUL/LCD.c:106:6:lcd_display_clear	8	static
+../ECAUL/LCD.c:110:6:lcd_display_return_home	8	static
+../ECAUL/LCD.c:114:13:write_4_bits	16	static
+../ECAUL/LCD.c:122:13:lcd_enable	8	static
+../ECAUL/LCD.c:128:7:date_to_string	16	static
+../ECAUL/LCD.c:141:7:time_to_string	16	static
+../ECAUL/LCD.c:154:6:number_to_string	16	static
+../ECAUL/LCD.c:163:13:udelay	24	static
