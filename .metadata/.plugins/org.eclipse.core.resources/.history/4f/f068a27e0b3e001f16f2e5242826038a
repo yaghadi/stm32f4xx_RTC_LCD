@@ -21,14 +21,12 @@ void lcd_set_cursor(uint8_t row,uint8_t column);
 char* time_to_string(RTC_TimeTypeDef *RTC_time);
 char* date_to_string(RTC_DateTypeDef *RTC_date);
 void number_to_string(uint8_t num,char* buf);
-void lcd_createChar(uint8_t location, uint8_t charc[]);
 //define commands
 #define LCD_CMD_4DL_2N_5X8F			0x28
 #define LCD_CMD_DON_CURON			0x0E
 #define LCD_CMD_INCADD				0x06
 #define LCD_CMD_DIS_CLEAR			0x01
 #define LCD_CMD_DIS_RETURN_HOME		0x02
-#define LCD_SETCGRAMADDR 			0x40
 //Application configurable items
 #define LCD_GPIO_PORT	GPIOD
 #define LCD_GPIO_RS		GPIO_PIN_0

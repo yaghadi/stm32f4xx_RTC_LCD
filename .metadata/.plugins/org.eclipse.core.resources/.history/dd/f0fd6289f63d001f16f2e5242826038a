@@ -71,8 +71,6 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
-
 	initialise_monitor_handles();
   /* USER CODE END 1 */
 
@@ -96,16 +94,6 @@ int main(void)
   MX_GPIO_Init();
   MX_RTC_Init();
   /* USER CODE BEGIN 2 */
-  uint8_t smiley[8] = {
-    0b00000,
-    0b00000,
-    0b01010,
-    0b00000,
-    0b00000,
-    0b10001,
-    0b01110,
-    0b00000
-  };
   char *time;
   char *date;
   lcd_init();
@@ -113,9 +101,6 @@ int main(void)
   lcd_set_cursor(1,1);
   lcd_print_string("RTC ....\n");
   HAL_Delay(2000);
-  lcd_display_clear();
-  lcd_set_cursor(1,7);
-  lcd_createChar(1, smiley); HAL_Delay(2000);
   /* USER CODE END 2 */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -135,7 +120,6 @@ int main(void)
 	  lcd_set_cursor(2,6);
 	  date=date_to_string(&sDate);
 	  lcd_print_string(date);
-
 //	  printf("%d : %d: %d \n",sTime.Hours,sTime.Minutes,sTime.Seconds);
 	  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
 	  HAL_Delay(999);
@@ -154,7 +138,6 @@ void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
            the HAL_RTC_AlarmAEventCallback could be implemented in the user file
    */
   lcd_display_clear();
-  lcd_display_return_home();
   lcd_set_cursor(1,1);
   lcd_print_string("Alarm Called");
   HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);

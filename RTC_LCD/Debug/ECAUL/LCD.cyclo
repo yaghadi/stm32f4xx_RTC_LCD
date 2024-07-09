@@ -10,4 +10,5 @@
 ../ECAUL/LCD.c:128:7:date_to_string	1
 ../ECAUL/LCD.c:141:7:time_to_string	1
 ../ECAUL/LCD.c:154:6:number_to_string	4
-../ECAUL/LCD.c:163:13:udelay	2
+../ECAUL/LCD.c:163:6:lcd_createChar	2
+../ECAUL/LCD.c:170:13:udelay	2

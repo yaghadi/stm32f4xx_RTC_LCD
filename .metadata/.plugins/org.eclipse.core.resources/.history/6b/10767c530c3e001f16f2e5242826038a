@@ -21,7 +21,7 @@ void lcd_set_cursor(uint8_t row,uint8_t column);
 char* time_to_string(RTC_TimeTypeDef *RTC_time);
 char* date_to_string(RTC_DateTypeDef *RTC_date);
 void number_to_string(uint8_t num,char* buf);
-void lcd_createChar(uint8_t location, uint8_t charc[]);
+void createChar(uint8_t location, uint8_t charc[]);
 //define commands
 #define LCD_CMD_4DL_2N_5X8F			0x28
 #define LCD_CMD_DON_CURON			0x0E
